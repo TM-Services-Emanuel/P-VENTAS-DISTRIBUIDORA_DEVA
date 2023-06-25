@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="resumendetalleSolicitudNCP" pageWidth="595" pageHeight="842" whenNoDataType="BlankPage" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="3bdba107-5d99-4613-b10e-8598c5504e05">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="deva"/>
+	<parameter name="ID" class="java.lang.Integer"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT detalle_solicitud.idsolicitud, 
+detalle_solicitud.idproducto, 
+productos.cod_barra, 
+productos.descripcion,
+Sum(detalle_solicitud.cantidad)
+FROM detalle_solicitud INNER JOIN productos where detalle_solicitud.idsolicitud= $P{ID} 
+AND detalle_solicitud.idproducto=productos.idproducto 
+GROUP BY detalle_solicitud.idproducto
+ORDER BY detalle_solicitud.idproducto]]>
+	</queryString>
+	<field name="idsolicitud" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="idsolicitud"/>
+		<property name="com.jaspersoft.studio.field.label" value="idsolicitud"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="detalle_solicitud"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idproducto" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="idproducto"/>
+		<property name="com.jaspersoft.studio.field.label" value="idproducto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="detalle_solicitud"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cod_barra" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="cod_barra"/>
+		<property name="com.jaspersoft.studio.field.label" value="cod_barra"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="productos"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="descripcion"/>
+		<property name="com.jaspersoft.studio.field.label" value="descripcion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="productos"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Sum(detalle_solicitud.cantidad)" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Sum(detalle_solicitud.cantidad)"/>
+		<property name="com.jaspersoft.studio.field.label" value="Sum(detalle_solicitud.cantidad)"/>
+	</field>
+	<columnHeader>
+		<band height="37">
+			<staticText>
+				<reportElement x="6" y="5" width="571" height="16" uuid="9fbc9d94-79bf-497d-b0d2-5b1330f469dd">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.75"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RESUMEN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="25" width="80" height="12" uuid="d66c4539-9bf4-49c3-97cc-b79da3cea38f"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CÓDIGO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="25" width="310" height="12" uuid="e2c5125f-825b-4e12-80a6-53c2450d2139"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESCRIPCIÓN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="25" width="50" height="12" uuid="6d3e9028-c364-477e-a298-2d5e2ab13f1e"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CANTIDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="25" width="120" height="12" uuid="89d686db-245d-41f0-a209-652105af794a">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="12" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement x="10" y="1" width="80" height="11" uuid="f732c7b1-a12f-4907-adba-84c8cb933659">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cod_barra}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.###;(#,##0.###-)">
+				<reportElement x="400" y="1" width="50" height="11" uuid="12691fba-811c-4b8d-a452-5279166068f7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Sum(detalle_solicitud.cantidad)}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="92" y="1" width="308" height="11" uuid="addd7ddd-3b9c-47c4-9014-e2c3eaccd9a0">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

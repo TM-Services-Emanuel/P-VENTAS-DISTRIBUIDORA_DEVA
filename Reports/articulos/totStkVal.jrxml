@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="totStkVal" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3188f248-05cc-4a88-87a0-854e6ef11788">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="deva"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT SUM(subtotal) FROM v_stk_val]]>
+	</queryString>
+	<field name="SUM(subtotal)" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="SUM(subtotal)"/>
+		<property name="com.jaspersoft.studio.field.label" value="SUM(subtotal)"/>
+	</field>
+	<summary>
+		<band height="20" splitType="Stretch">
+			<textField pattern="#,###.###;#,###.###-">
+				<reportElement x="430" y="4" width="125" height="16" uuid="87d4ddd9-21a7-4531-bce1-81336d1616bd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SUM(subtotal)}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="4" width="420" height="16" uuid="ca83bb17-15ec-4c61-ba40-a7f484feca83"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUMA TOTAL DE VALORES]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

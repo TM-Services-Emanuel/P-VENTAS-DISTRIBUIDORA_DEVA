@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="detalle_1_recibo" pageWidth="595" pageHeight="842" whenNoDataType="BlankPage" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="3bdba107-5d99-4613-b10e-8598c5504e05">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="deva"/>
+	<parameter name="ID" class="java.lang.Integer"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM v_recibo_facturas
+WHERE 
+	 v_recibo_facturas.idpago = $P{ID}]]>
+	</queryString>
+	<field name="idpago" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="idpago"/>
+		<property name="com.jaspersoft.studio.field.label" value="idpago"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_recibo_facturas"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idcli" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="idcli"/>
+		<property name="com.jaspersoft.studio.field.label" value="idcli"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_recibo_facturas"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ruc" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ruc"/>
+		<property name="com.jaspersoft.studio.field.label" value="ruc"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_recibo_facturas"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rs" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="rs"/>
+		<property name="com.jaspersoft.studio.field.label" value="rs"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_recibo_facturas"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fac_fecha" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="fac_fecha"/>
+		<property name="com.jaspersoft.studio.field.label" value="fac_fecha"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_recibo_facturas"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fac_factura" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="fac_factura"/>
+		<property name="com.jaspersoft.studio.field.label" value="fac_factura"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_recibo_facturas"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fac_tipoventa" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="fac_tipoventa"/>
+		<property name="com.jaspersoft.studio.field.label" value="fac_tipoventa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_recibo_facturas"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fac_totalfinal" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="fac_totalfinal"/>
+		<property name="com.jaspersoft.studio.field.label" value="fac_totalfinal"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_recibo_facturas"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idemision" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="idemision"/>
+		<property name="com.jaspersoft.studio.field.label" value="idemision"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_recibo_facturas"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<title>
+		<band height="49">
+			<staticText>
+				<reportElement x="1" y="25" width="60" height="12" uuid="4d7b2fb5-f12e-45b7-b05c-c73e11487621">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Recibí (mos) de:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="37" width="22" height="12" uuid="e3914c25-c45b-41be-8641-ee18852c30dd">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[RUC:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="64" y="25" width="237" height="12" uuid="6b8d4ee7-696f-4f63-9b35-1e8977c163f1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rs}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="25" y="37" width="276" height="12" uuid="784d7cea-c042-4d87-abe5-57edea4583ad"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ruc}]]></textFieldExpression>
+			</textField>
+			<textField pattern="&apos;Fecha de Emisión:&apos; dd &apos;de&apos; MMMM &apos;de&apos; yyyy">
+				<reportElement x="1" y="1" width="300" height="12" uuid="e88a7969-47d9-4f68-9435-1229367a385f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fac_fecha}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+</jasperReport>

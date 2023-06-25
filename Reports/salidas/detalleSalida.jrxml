@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="detalleSalida" pageWidth="595" pageHeight="842" whenNoDataType="BlankPage" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="3bdba107-5d99-4613-b10e-8598c5504e05">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="deva"/>
+	<parameter name="ID" class="java.lang.Integer"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM v_salidadetalle
+WHERE salida_sal_codigo= $P{ID}]]>
+	</queryString>
+	<field name="idproducto" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="idproducto"/>
+		<property name="com.jaspersoft.studio.field.label" value="idproducto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_salidadetalle"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="salida_sal_codigo" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="salida_sal_codigo"/>
+		<property name="com.jaspersoft.studio.field.label" value="salida_sal_codigo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_salidadetalle"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mot_nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="mot_nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="mot_nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_salidadetalle"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ds_cantidad" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="ds_cantidad"/>
+		<property name="com.jaspersoft.studio.field.label" value="ds_cantidad"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_salidadetalle"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codbarra" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="codbarra"/>
+		<property name="com.jaspersoft.studio.field.label" value="codbarra"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_salidadetalle"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="descripcion"/>
+		<property name="com.jaspersoft.studio.field.label" value="descripcion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_salidadetalle"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ds_precio" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="ds_precio"/>
+		<property name="com.jaspersoft.studio.field.label" value="ds_precio"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_salidadetalle"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ds_monto" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="ds_monto"/>
+		<property name="com.jaspersoft.studio.field.label" value="ds_monto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_salidadetalle"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="stock" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="stock"/>
+		<property name="com.jaspersoft.studio.field.label" value="stock"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_salidadetalle"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="11" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement x="0" y="0" width="80" height="11" uuid="f732c7b1-a12f-4907-adba-84c8cb933659">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codbarra}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.###;(#,##0.###-)">
+				<reportElement x="290" y="0" width="31" height="11" uuid="12691fba-811c-4b8d-a452-5279166068f7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ds_cantidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="82" y="0" width="208" height="11" uuid="addd7ddd-3b9c-47c4-9014-e2c3eaccd9a0">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="321" y="0" width="40" height="11" uuid="df7bf095-718d-41ce-9d76-8deec52f50d6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ds_precio}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="361" y="0" width="49" height="11" uuid="5a03c35a-e691-4fbd-871b-4067209f32d2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ds_monto}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="518" y="0" width="50" height="11" uuid="00f09cf1-fcdf-40af-9072-e9899af79c75"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{stock}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="410" y="0" width="108" height="11" uuid="8714ad96-4780-484f-a018-91e566bb8085">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mot_nombre}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

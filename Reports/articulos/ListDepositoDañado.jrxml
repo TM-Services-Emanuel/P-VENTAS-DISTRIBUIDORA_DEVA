@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ListDepositoDañado" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="585" leftMargin="5" rightMargin="5" topMargin="5" bottomMargin="5" uuid="3a62a648-2355-4f35-9f80-dc16ef3db7a1">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="deva"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Arial" fontSize="26" isBold="true"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[select idproducto, division, cod_barra, descripcion, stock, costo, (stock*costo) as subtotal from v_dañados2 order by division asc]]>
+	</queryString>
+	<field name="idproducto" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="idproducto"/>
+		<property name="com.jaspersoft.studio.field.label" value="idproducto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="dañados"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="division" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="division"/>
+		<property name="com.jaspersoft.studio.field.label" value="division"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="division"/>
+	</field>
+	<field name="cod_barra" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="cod_barra"/>
+		<property name="com.jaspersoft.studio.field.label" value="cod_barra"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="productos"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="descripcion"/>
+		<property name="com.jaspersoft.studio.field.label" value="descripcion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="productos"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="stock" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="stock"/>
+		<property name="com.jaspersoft.studio.field.label" value="stock"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="dañados"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="costo" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="costo"/>
+		<property name="com.jaspersoft.studio.field.label" value="costo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="productos"/>
+	</field>
+	<field name="subtotal" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="subtotal"/>
+		<property name="com.jaspersoft.studio.field.label" value="subtotal"/>
+	</field>
+	<variable name="subtotal1" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{subtotal}]]></variableExpression>
+	</variable>
+	<title>
+		<band height="138">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<staticText>
+				<reportElement x="6" y="126" width="104" height="12" uuid="40a4f431-ebf6-4279-a203-cecc231c53b1">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[APLICADO A:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="112" y="126" width="262" height="12" uuid="60b8fdc0-853d-4926-b7fa-eda393602b6e"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["DEPOSITO DE PRODUCTOS BUENO"]]></textFieldExpression>
+			</textField>
+			<rectangle radius="0">
+				<reportElement mode="Transparent" x="5" y="6" width="575" height="69" uuid="966db237-1dd5-48e5-bf40-89b0955a0a20"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="10" y="7" width="563" height="27" uuid="2a6970d9-a92b-4bed-b57b-216033184db6">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial Rounded MT Bold" size="20" isBold="false"/>
+				</textElement>
+				<text><![CDATA[DISTRIBUIDORA DEVA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="42" width="563" height="17" uuid="a8b92d82-024c-4d64-889f-7baff9a6a799">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="SansSerif" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Venta de productos Lácteos y Embutidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="60" width="563" height="15" uuid="43a59657-d296-46b2-a17e-ac4059142cb1"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[Tel: (0975) 341 339 - Coronel Oviedo - Dpto. de Caaguazu - PY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="113" width="104" height="12" uuid="34ccdd36-ce6a-49a3-be7c-7719bc56aefa">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA REPORTE:]]></text>
+			</staticText>
+			<textField pattern="dd &apos; de &apos; MMMM &apos; de &apos; yyyy">
+				<reportElement x="112" y="113" width="176" height="12" uuid="38976b62-0d80-42e0-a6ca-066d01f65341">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="SubTitle" x="6" y="81" width="574" height="12" forecolor="#383838" uuid="780a4734-9487-4e6d-8bca-17984e1e067e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Stock Valorizado - Depósito de Dañados]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band/>
+	</pageHeader>
+	<columnHeader>
+		<band height="34">
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="90" height="15" forecolor="#383838" uuid="7cc8bd8f-760d-44e5-8571-41b163bd445e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c606ec61-3570-4aeb-bc35-4acab205b840"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.5" lineColor="#000000"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código de Barra]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="19" width="307" height="15" forecolor="#383838" uuid="993d2f52-afff-45ce-a30f-e8768b26f8ce">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="16f4a46e-002a-4d6b-825c-51e29c747d0b"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.5" lineColor="#000000"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripción del Producto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="397" y="0" width="55" height="34" forecolor="#383838" uuid="1cfda0ae-dd46-4ccc-bdef-f78a039b8417">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f50f1329-df75-4454-afdf-30d8673be814"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.5" lineColor="#000000"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Precio Costo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="452" y="0" width="55" height="34" forecolor="#383838" uuid="9fa92d73-1be5-4aeb-ad01-65cfb2909aac">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="db6c1d7e-3667-4596-a9cb-8f4ec7e743b2"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.5" lineColor="#000000"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Stock actual]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="507" y="0" width="73" height="34" forecolor="#383838" uuid="54a30235-b2e4-4b3e-8b4e-7c46cd7a28ae">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5f559e66-0ebf-4f14-ab65-4a32c9bed451"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.5" lineColor="#000000"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sub-Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15">
+			<textField isBlankWhenNull="true">
+				<reportElement style="Detail" x="0" y="0" width="90" height="15" uuid="be8540d5-b562-4dba-a190-e7616beca306">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c606ec61-3570-4aeb-bc35-4acab205b840"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cod_barra}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="92" y="0" width="305" height="15" uuid="f805bd07-6a25-4190-9f66-110d5ac1e2c3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="16f4a46e-002a-4d6b-825c-51e29c747d0b"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,###.###;#,###.###-" isBlankWhenNull="true">
+				<reportElement style="Detail" x="397" y="0" width="55" height="15" uuid="62c94c0e-3b22-4a0b-8c83-6e3236234914">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f50f1329-df75-4454-afdf-30d8673be814"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{costo}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,###.###;#,###.###-" isBlankWhenNull="true">
+				<reportElement style="Detail" x="452" y="0" width="55" height="15" uuid="5d288467-a756-4343-be95-3faf18398d41">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="db6c1d7e-3667-4596-a9cb-8f4ec7e743b2"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{stock}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,###.###;#,###.###-" isBlankWhenNull="true">
+				<reportElement style="Detail" x="507" y="0" width="73" height="15" uuid="1c15f962-5356-45bc-a804-34caacd1b953">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5f559e66-0ebf-4f14-ab65-4a32c9bed451"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subtotal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="14">
+			<textField pattern="dd &apos;de&apos; MMMM &apos;de&apos; yyyy hh:mm a">
+				<reportElement x="5" y="0" width="194" height="14" uuid="c879d436-cae7-4bc0-a507-3b068821616b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="50">
+			<staticText>
+				<reportElement style="Column header" x="0" y="4" width="479" height="16" forecolor="#383838" uuid="0e54fcae-68dd-4b06-b1d5-ed6367660d62">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c606ec61-3570-4aeb-bc35-4acab205b840"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUMA TOTAL DE VALORES]]></text>
+			</staticText>
+			<textField pattern="#,###.###;#,###.###-" isBlankWhenNull="true">
+				<reportElement x="480" y="4" width="100" height="16" forecolor="#383838" uuid="6102a2d7-3748-4bb5-ab30-4b9dd9fc3f96"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{subtotal1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

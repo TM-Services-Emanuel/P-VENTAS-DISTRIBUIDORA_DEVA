@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="detalle_3_recibo" pageWidth="595" pageHeight="842" whenNoDataType="BlankPage" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="3bdba107-5d99-4613-b10e-8598c5504e05">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="deva"/>
+	<parameter name="ID" class="java.lang.Integer"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM v_recibo_nc
+WHERE 
+	 v_recibo_nc.idpago = $P{ID}]]>
+	</queryString>
+	<field name="idnc" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="idnc"/>
+		<property name="com.jaspersoft.studio.field.label" value="idnc"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_recibo_nc"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="fecha"/>
+		<property name="com.jaspersoft.studio.field.label" value="fecha"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_recibo_nc"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nc_nro" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nc_nro"/>
+		<property name="com.jaspersoft.studio.field.label" value="nc_nro"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_recibo_nc"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="total"/>
+		<property name="com.jaspersoft.studio.field.label" value="total"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_recibo_nc"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idpago" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="idpago"/>
+		<property name="com.jaspersoft.studio.field.label" value="idpago"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_recibo_nc"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<columnHeader>
+		<band height="11">
+			<staticText>
+				<reportElement x="60" y="1" width="81" height="10" uuid="e6cb7db5-3272-42f8-856b-db8253c5e8ce"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Nota de Crédito Nro.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="141" y="1" width="61" height="10" uuid="4b4b2331-e45f-4478-a89f-78e0b698038c"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Monto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="1" width="59" height="10" uuid="56bcb45a-294b-44e4-8ef4-ad660da8a9cb"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="10">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="1" y="0" width="59" height="10" uuid="168bdd69-9ffe-432b-8ee5-8461e98efdcb"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="0" width="81" height="10" uuid="d2c7aeeb-3618-48d9-8b6f-5fa990ab2062"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nc_nro}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,###.###;#,###.###-">
+				<reportElement x="141" y="0" width="61" height="10" uuid="8c9ed13a-d68d-4049-9160-0fee64afea15"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="detalle_4_recibo" pageWidth="595" pageHeight="842" whenNoDataType="BlankPage" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="3bdba107-5d99-4613-b10e-8598c5504e05">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="deva"/>
+	<parameter name="ID" class="java.lang.Integer"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM v_recibo_cheques
+WHERE 
+	 v_recibo_cheques.idpago = $P{ID}]]>
+	</queryString>
+	<field name="idcheque" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="idcheque"/>
+		<property name="com.jaspersoft.studio.field.label" value="idcheque"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_recibo_cheques"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idpago" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="idpago"/>
+		<property name="com.jaspersoft.studio.field.label" value="idpago"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_recibo_cheques"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="descripcion"/>
+		<property name="com.jaspersoft.studio.field.label" value="descripcion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_recibo_cheques"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nro_cheque" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nro_cheque"/>
+		<property name="com.jaspersoft.studio.field.label" value="nro_cheque"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_recibo_cheques"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="10">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="49" y="0" width="60" height="10" uuid="168bdd69-9ffe-432b-8ee5-8461e98efdcb"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nro_cheque}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="169" y="0" width="179" height="10" uuid="d2c7aeeb-3618-48d9-8b6f-5fa990ab2062"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="49" height="10" uuid="56bcb45a-294b-44e4-8ef4-ad660da8a9cb"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Cheque Nro:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="109" y="0" width="59" height="10" uuid="e6cb7db5-3272-42f8-856b-db8253c5e8ce"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Banco:]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

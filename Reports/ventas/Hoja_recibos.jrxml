@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Hoja_recibos" pageWidth="595" pageHeight="842" columnWidth="567" leftMargin="23" rightMargin="5" topMargin="10" bottomMargin="10" uuid="3a62a648-2355-4f35-9f80-dc16ef3db7a1">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="deva"/>
+	<parameter name="ID" class="java.lang.Integer"/>
+	<parameter name="LETRA" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM v_pagos_clientes
+WHERE idpagos = $P{ID}]]>
+	</queryString>
+	<field name="idpagos" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="idpagos"/>
+		<property name="com.jaspersoft.studio.field.label" value="idpagos"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_pagos_clientes"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idemision" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="idemision"/>
+		<property name="com.jaspersoft.studio.field.label" value="idemision"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_pagos_clientes"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nr_autorizacion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nr_autorizacion"/>
+		<property name="com.jaspersoft.studio.field.label" value="nr_autorizacion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_pagos_clientes"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_autorizacion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="fecha_autorizacion"/>
+		<property name="com.jaspersoft.studio.field.label" value="fecha_autorizacion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_pagos_clientes"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="recibo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="recibo"/>
+		<property name="com.jaspersoft.studio.field.label" value="recibo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_pagos_clientes"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="total"/>
+		<property name="com.jaspersoft.studio.field.label" value="total"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_pagos_clientes"/>
+	</field>
+	<field name="fecha_hora" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="fecha_hora"/>
+		<property name="com.jaspersoft.studio.field.label" value="fecha_hora"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_pagos_clientes"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<title>
+		<band height="356">
+			<subreport>
+				<reportElement x="-2" y="0" width="561" height="300" uuid="05b07cd1-b572-46c0-a6ce-ab24f5917bab">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<subreportParameter name="ID">
+					<subreportParameterExpression><![CDATA[$P{ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="LETRA">
+					<subreportParameterExpression><![CDATA[$P{LETRA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["C:/P-VENTAS/Reports/ventas/ReciboDinero.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="-2" y="336" width="561" height="20" uuid="d870f34a-96f4-4496-9357-7cb5d5ec5ac6">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<subreportParameter name="ID">
+					<subreportParameterExpression><![CDATA[$P{ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="LETRA">
+					<subreportParameterExpression><![CDATA[$P{LETRA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["C:/P-VENTAS/Reports/ventas/ReciboDinero2.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</title>
+</jasperReport>

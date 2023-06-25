@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="detalle_nc_extracto" pageWidth="595" pageHeight="842" whenNoDataType="BlankPage" columnWidth="590" leftMargin="0" rightMargin="5" topMargin="20" bottomMargin="10" uuid="eac7f807-b02f-449c-a7c4-d91bf689bd81">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="deva"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Arial" fontSize="26" isBold="true"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="desde" class="java.sql.Date"/>
+	<parameter name="hasta" class="java.sql.Date"/>
+	<parameter name="id" class="java.lang.Integer"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM v_nc_legal 
+WHERE fecha>= $P{desde}  
+AND fecha <= $P{hasta}  
+AND idcliente = $P{id}  AND estado='S' AND liquidado='N'
+GROUP BY cod]]>
+	</queryString>
+	<field name="orden" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="orden"/>
+		<property name="com.jaspersoft.studio.field.label" value="orden"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_nc_legal"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cod" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="cod"/>
+		<property name="com.jaspersoft.studio.field.label" value="cod"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_nc_legal"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idcliente" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="idcliente"/>
+		<property name="com.jaspersoft.studio.field.label" value="idcliente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_nc_legal"/>
+	</field>
+	<field name="ruc" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ruc"/>
+		<property name="com.jaspersoft.studio.field.label" value="ruc"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_nc_legal"/>
+	</field>
+	<field name="razon_social" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="razon_social"/>
+		<property name="com.jaspersoft.studio.field.label" value="razon_social"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_nc_legal"/>
+	</field>
+	<field name="timbra" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="timbra"/>
+		<property name="com.jaspersoft.studio.field.label" value="timbra"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_nc_legal"/>
+	</field>
+	<field name="nr_autorizacion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nr_autorizacion"/>
+		<property name="com.jaspersoft.studio.field.label" value="nr_autorizacion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_nc_legal"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_autorizacion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="fecha_autorizacion"/>
+		<property name="com.jaspersoft.studio.field.label" value="fecha_autorizacion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_nc_legal"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="desde" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="desde"/>
+		<property name="com.jaspersoft.studio.field.label" value="desde"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_nc_legal"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="hasta" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="hasta"/>
+		<property name="com.jaspersoft.studio.field.label" value="hasta"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_nc_legal"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="fecha"/>
+		<property name="com.jaspersoft.studio.field.label" value="fecha"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_nc_legal"/>
+	</field>
+	<field name="numero" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="numero"/>
+		<property name="com.jaspersoft.studio.field.label" value="numero"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_nc_legal"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="anexado" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="anexado"/>
+		<property name="com.jaspersoft.studio.field.label" value="anexado"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_nc_legal"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="totalfinal" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="totalfinal"/>
+		<property name="com.jaspersoft.studio.field.label" value="totalfinal"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_nc_legal"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nc_exenta" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="nc_exenta"/>
+		<property name="com.jaspersoft.studio.field.label" value="nc_exenta"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_nc_legal"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nc_5" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="nc_5"/>
+		<property name="com.jaspersoft.studio.field.label" value="nc_5"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_nc_legal"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nc_10" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="nc_10"/>
+		<property name="com.jaspersoft.studio.field.label" value="nc_10"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_nc_legal"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cant" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="cant"/>
+		<property name="com.jaspersoft.studio.field.label" value="cant"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_nc_legal"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cod_barra" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="cod_barra"/>
+		<property name="com.jaspersoft.studio.field.label" value="cod_barra"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_nc_legal"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="descripcion"/>
+		<property name="com.jaspersoft.studio.field.label" value="descripcion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_nc_legal"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="precio" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="precio"/>
+		<property name="com.jaspersoft.studio.field.label" value="precio"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_nc_legal"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="e" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="e"/>
+		<property name="com.jaspersoft.studio.field.label" value="e"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_nc_legal"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="exenta" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="exenta"/>
+		<property name="com.jaspersoft.studio.field.label" value="exenta"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_nc_legal"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="c" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="c"/>
+		<property name="com.jaspersoft.studio.field.label" value="c"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_nc_legal"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cinco" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="cinco"/>
+		<property name="com.jaspersoft.studio.field.label" value="cinco"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_nc_legal"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="d" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="d"/>
+		<property name="com.jaspersoft.studio.field.label" value="d"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_nc_legal"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="diez" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="diez"/>
+		<property name="com.jaspersoft.studio.field.label" value="diez"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_nc_legal"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="total"/>
+		<property name="com.jaspersoft.studio.field.label" value="total"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_nc_legal"/>
+	</field>
+	<field name="estado" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="estado"/>
+		<property name="com.jaspersoft.studio.field.label" value="estado"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_nc_legal"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="liquidado" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="liquidado"/>
+		<property name="com.jaspersoft.studio.field.label" value="liquidado"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="v_nc_legal"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement style="SubTitle" x="0" y="10" width="555" height="12" forecolor="#383838" uuid="7cf07460-f652-489d-bf30-11db339c7868">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Detalle de Notas de Créditos Generados]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="24" width="470" height="1" uuid="b862e2eb-eaf9-476e-9db5-57ed083f99e6">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="1" y="9" width="69" height="15" forecolor="#030303" uuid="4206d595-52dd-4204-be7c-e8896c3b75a2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fa07062c-bd00-42ac-8432-8f9d189f4c59"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Timbrado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="70" y="9" width="106" height="15" forecolor="#030303" uuid="6ed06d01-5340-4caa-9d33-689ab982b0d8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="db307cf1-7c69-49cd-a0de-cca7611a3000"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Nota de Crédito Nro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="176" y="9" width="70" height="15" forecolor="#030303" uuid="92fd7a3f-c532-4927-9450-64fbb0a55e10">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="35ec02d6-85b9-4175-9e5b-57a2b6199b26"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="332" y="9" width="134" height="15" forecolor="#030303" uuid="b4c448df-79b0-49ba-854a-33c03bbdc36d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="eb09bbc3-dffa-4561-ac67-46edddc1d254"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Anexado a la Factura Nro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="246" y="9" width="86" height="15" forecolor="#030303" uuid="28bf3ba6-5fd5-41a1-9bf6-8f1f15637611">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0fa7c08d-d1ee-4bf1-9fd0-c3b6a23410f7"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="470" height="1" uuid="39f48c34-b6ee-47f7-8876-c3aaee1eb021">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement style="Detail" x="1" y="0" width="69" height="15" uuid="1e865f1c-0380-4d8a-a24e-240fe43b3600">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fa07062c-bd00-42ac-8432-8f9d189f4c59"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{timbra}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="Detail" x="70" y="0" width="106" height="15" uuid="95b73be7-14fd-4f60-a90d-c452f50bc4fe">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="db307cf1-7c69-49cd-a0de-cca7611a3000"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numero}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement style="Detail" x="176" y="0" width="70" height="15" uuid="fa9fe9e4-088a-4222-b6d4-012672268a7c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="35ec02d6-85b9-4175-9e5b-57a2b6199b26"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<textField pattern="hh:mm" isBlankWhenNull="true">
+				<reportElement style="Detail" x="332" y="0" width="132" height="15" uuid="7e65a2ce-b5ec-4284-97e6-769a22795be1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="eb09bbc3-dffa-4561-ac67-46edddc1d254"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{anexado}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,###.###;#,###.###-" isBlankWhenNull="true">
+				<reportElement style="Detail" x="246" y="0" width="86" height="15" uuid="937bd2b0-77b2-4e49-84e3-e86e9b17cb47">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0fa7c08d-d1ee-4bf1-9fd0-c3b6a23410f7"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalfinal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>
